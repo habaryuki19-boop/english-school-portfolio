@@ -1,0 +1,74 @@
+/* src/index.css */
+
+/* 画面いっぱいにするための基本設定 */
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 全体背景（途切れないよう body に持たせる） */
+body {
+  min-height: 100vh;
+  background: radial-gradient(900px circle at 15% 10%, rgba(59, 130, 246, 0.20), transparent 60%),
+              radial-gradient(800px circle at 70% 20%, rgba(99, 102, 241, 0.18), transparent 55%),
+              linear-gradient(180deg, #050b1a 0%, #030815 60%, #020617 100%);
+  color: rgba(255, 255, 255, 0.92);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+/* もし “右側が余る/中央に寄ってしまう” 原因がある場合を潰す */
+#root {
+  max-width: none;
+}
+
+/* ボタンや入力の見た目を整える（任意だけど便利） */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(59, 130, 246, 0.65);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+}
+
+/* スクロールバー（Chrome系だけ。Safariは効かないこともある） */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
